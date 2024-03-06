@@ -1,0 +1,45 @@
+Pre Requisite
+     - python version >= 3.8.0 
+     - git 2.44.0
+
+!note if you are using windows much better to use the gui bash of git 
+
+Building python environment 
+    - pip install virtualenv
+    - Check that virtualenv is installed through the command pip --version
+    - Install virtualenvwrapper-win through the command pip install virtualenvwrapper-win
+
+    Make environment
+        - python -m venv <name> 
+        - source <name env>/Scripts/activate
+        - check the python version 
+            - python --version
+
+Cloning Repository
+
+    command
+        - git clone https://github.com/code-jas/vi-hat-repo.git
+        - cd vi-hat-repo
+        - pip install -r requirements.txt        
+        - python detect.py
+
+
+
+Training 
+    - create separate folder for the training 
+
+
+Cloning the yolov5 lite
+
+    - git clone https://github.com/ppogg/YOLOv5-Lite.git
+    - cd YOLOv5-Lite
+    - pip install -r requirements.txt
+    - python train.py --data coco.yaml --cfg v5lite-e.yaml --weights v5lite-e.pt --batch-size 64
+
+
+
+
+
+
+
+
