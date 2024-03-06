@@ -1,29 +1,18 @@
-Forked from ppogg - here is the repo: https://github.com/ppogg/YOLOv5-Lite
+# requirements
 
-# Changes
-CCTV - Delayed real-time object detection the more time we run the model the more it delays.
-Fix: https://github.com/ultralytics/yolov5/issues/4465#issuecomment-1113038325
+    - python version >= 3.8.0
+    - git 2.44.0
 
-datasets.py:362 comment  time.sleep(1 / self.fps[i]) # wait time
+! note if you are using windows much better to use the gui bash of git 
 
-error: AttributeError: 'Upsample' object has no attribute 'recompute_scale_factor'
-Fix:  https://blog.csdn.net/weixin_43401024/article/details/124428432
-
-C:\Users\jhojh\Anaconda3\envs\yolov5lite\lib\site-packages\torch\nn\modules\module.py:153-154
-replace `
-def forward(self, input: Tensor) -> Tensor:
-        # return F.interpolate(input, self.size, self.scale_factor, self.mode, self.align_corners,
-        #                      recompute_scale_factor=self.recompute_scale_factor)
-        return F.interpolate(input, self.size, self.scale_factor, self.mode, self.align_corners)
-`
-
-Fixed Distance Estimation
-Detect.py: 
-added width per class
-#line 310 added read focal method
+### Building python environment
+    - pip install virtualenv
+    - Check that virtualenv is installed through the command pip --version
+    - Install virtualenvwrapper-win through the command pip install virtualenvwrapper-win
 
 
-
-Test
-python test.py --weights weights/vih-model.pt --data vih-dataset/data.yaml --verbose --name addPerClass
-python test.py --weights weights/wcm-model.pt --data wcm-dataset/data.yaml --verbose --name addPerClass
+```bash
+$ git clone https://github.com/ppogg/YOLOv5-Lite
+$ cd YOLOv5-Lite
+$ pip install -r requirements.txt
+```
